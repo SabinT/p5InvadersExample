@@ -6,7 +6,7 @@ const hh = h / 2;
 let g;
 
 function render(g) {
-  circle(hw, hh, 600);
+  circle(hw, hh, 400);
 }
 
 window.setup = function () {
