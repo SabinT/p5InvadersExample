@@ -1,26 +1,48 @@
-const w = 800;
-const hw = w / 2;
-const h = 800;
-const hh = h / 2;
+import { BigEnemy, Enemy } from "./enemy.js"
+import { Player } from "./player/player.js"
 
-let g;
+let e;
+let e1;
 
-function render(g) {
-  circle(hw, hh, 400);
-}
+let p;
 
 window.setup = function () {
-  createCanvas(w, h);
+  createCanvas(800, 800);
+  e = new Enemy(100, 100);
+  e1 = new BigEnemy(300, 300);
+  p = new Player();
 };
 
 window.draw = function () {
-  background(10);
-  render(g);
-  noLoop();
+  // Clear the screen
+  background(100);
+
+  // Update the positions of everything
+  e.move();
+  e1.move();
+
+  // Move player 
+  if (keyIsDown(LEFT_ARROW)) {
+    p.x = p.x - 10;
+  }
+  
+  if (keyIsDown(RIGHT_ARROW)) {
+    p.x = p.x + 10;
+  }
+
+  // Draw function
+  e.draw();
+  e1.draw();
+  p.draw();
 };
 
-window.keyTyped = function () {
-  if (key === "s") {
-    save();
+window.mousePressed = function () {
+  console.log("Mouse was pressed at " + mouseX + ", " + mouseY);
+}
+
+window.keyPressed = function () {
+  if (keyCode == 32) {
+    console.log("Spacebar was pressed");
   }
-};
+}
+
