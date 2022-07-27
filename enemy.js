@@ -4,6 +4,11 @@ export class Enemy {
       this.x = a;
       this.y = b;
     }
+
+    update() {
+      this.move();
+      this.draw();
+    }
   
     move() {
       this.x = this.x + 5;
@@ -14,11 +19,4 @@ export class Enemy {
       fill("red");
       circle(this.x, this.y, 50);
     }
-}
-
-export class BigEnemy extends Enemy {
-  draw() {
-    fill("red");
-    circle(this.x, this.y, 100);
-  }
 }
