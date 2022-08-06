@@ -57,7 +57,7 @@ window.draw = function() {
 
   // To draw a character at position 'pos' in the characterRamp on the screen, use:
   //   let char = characterRamp[pos];
-  //   text(, xCenter, yCenter);
+  //   text(char, xCenter, yCenter);
   // Note: strings can be indexed like an array to retrieve characters.
 
   // To get the brightness of a pixel, use:
