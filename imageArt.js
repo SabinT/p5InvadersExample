@@ -72,6 +72,7 @@ window.draw = function() {
 }
 
 window.keyPressed = function() {
+  // Press 's' to save the image
   if (key == 's' || key == 'S') {
     save('imageArt.png');
   }
